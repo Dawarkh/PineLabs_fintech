@@ -2,10 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { Stats, Environment } from '@react-three/drei'
 import { CameraRig } from './CameraRig'
 import { ScrollController } from './ScrollController'
-import { HeroModule } from './modules/HeroModule'
-import { FrictionModule } from './modules/FrictionModule'
-import { BusinessModule } from './modules/BusinessModule'
-import { GeographyModule } from './modules/GeographyModule'
+import { Earth } from './Earth'
 
 export const Scene = () => {
   return (
@@ -23,15 +20,12 @@ export const Scene = () => {
         <ScrollController />
         
         {/* Global Lighting */}
-        <ambientLight intensity={0.2} />
-        <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
-        <Environment preset="city" environmentIntensity={0.5} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1.5} castShadow />
+        <Environment preset="city" environmentIntensity={1} />
 
         {/* 3D Modules */}
-        <HeroModule />
-        <FrictionModule />
-        <BusinessModule />
-        <GeographyModule />
+        <Earth />
       </Canvas>
     </div>
   )
