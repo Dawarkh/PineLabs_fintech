@@ -5,8 +5,11 @@ import * as THREE from 'three'
 import { useStore } from '../../store/useStore'
 
 export const Earth = () => {
-  const { scene } = useGLTF('/earth.glb')
   const groupRef = useRef<THREE.Group>(null)
+  
+  // Ensure the asset path respects Vite's base URL for GitHub Pages
+  const basePath = import.meta.env.BASE_URL || '/'
+  const { scene } = useGLTF(`${basePath}earth.glb`)
 
   // We want to smoothly interpolate rotation towards the target rotation
   const currentRotation = useRef(0)
