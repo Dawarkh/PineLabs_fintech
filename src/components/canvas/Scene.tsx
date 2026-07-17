@@ -1,3 +1,4 @@
+import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Stats, Environment } from '@react-three/drei'
 import { CameraRig } from './CameraRig'
@@ -25,7 +26,9 @@ export const Scene = () => {
         <Environment preset="city" environmentIntensity={1} />
 
         {/* 3D Modules */}
-        <Earth />
+        <React.Suspense fallback={null}>
+          <Earth />
+        </React.Suspense>
       </Canvas>
     </div>
   )
