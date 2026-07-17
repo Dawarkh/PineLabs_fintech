@@ -4,6 +4,10 @@ import { Header } from './components/layout/Header'
 import { SmoothScroll } from './components/layout/SmoothScroll'
 import { Section } from './components/dom/Section'
 
+import lokvirImg from './assets/lokvir_kapoor.jpg'
+import rajulImg from './assets/rajul_garg.jpg'
+import tarunImg from './assets/tarun_upadhyay.jpg'
+
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -11,7 +15,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const basePath = import.meta.env.BASE_URL || '/'
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -176,9 +179,9 @@ function App() {
 
               {/* Large Portrait Cards */}
               {[
-                { name: 'Lokvir Kapoor', role: 'Co-Founder · Exec Chairman', img: `${basePath}lokvir_kapoor.jpg`, color: 'bg-pine', border: 'border-pine', desc: 'The core architect of Pine Labs\'s vision. Led the company from its smart-card roots through a major pivot into mainstream POS.' },
-                { name: 'Rajul Garg', role: 'Co-Founder', img: `${basePath}rajul_garg.jpg`, color: 'bg-indigo', border: 'border-indigo', desc: 'Brought deep software and systems engineering DNA to Pine Labs. Was central to early product architecture.' },
-                { name: 'Tarun Upadhyay', role: 'Co-Founder', img: `${basePath}tarun_upadhyay.jpg`, color: 'bg-gold', border: 'border-gold', desc: 'Shaped the early technical stack for petroleum retail automation — the domain that gave Pine Labs its first product-market fit.' },
+                { name: 'Lokvir Kapoor', role: 'Co-Founder · Exec Chairman', img: lokvirImg, color: 'bg-pine', border: 'border-pine', desc: 'The core architect of Pine Labs\'s vision. Led the company from its smart-card roots through a major pivot into mainstream POS.' },
+                { name: 'Rajul Garg', role: 'Co-Founder', img: rajulImg, color: 'bg-indigo', border: 'border-indigo', desc: 'Brought deep software and systems engineering DNA to Pine Labs. Was central to early product architecture.' },
+                { name: 'Tarun Upadhyay', role: 'Co-Founder', img: tarunImg, color: 'bg-gold', border: 'border-gold', desc: 'Shaped the early technical stack for petroleum retail automation — the domain that gave Pine Labs its first product-market fit.' },
                 { name: 'B. Amrish Rau', role: 'Growth CEO · Joined 2020', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', color: 'bg-purple-500', border: 'border-purple-500', desc: 'A fintech founder in his own right, Amrish Rau was brought in as CEO in 2020. He gave the company a second wave of ambition for IPO.' },
               ].map((f) => (
                 <div key={f.name} className="w-[75vw] md:w-[35vw] lg:w-[25vw] flex-shrink-0 group relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-500 ease-out hover:scale-110 lg:hover:scale-[1.4] hover:z-50 origin-center">
