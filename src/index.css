@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+@theme {
+  /* Colors */
+  --color-pine: #00e5a8;
+  --color-pine-hover: #00ffbc;
+  --color-pine-glow: rgba(0, 229, 168, 0.15);
+  
+  --color-dark: #030303;
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #111111;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #999999;
+  --color-text-tertiary: #666666;
+  
+  --color-accent-indigo: #6d7cff;
+  --color-accent-gold: #f5c842;
+  --color-accent-red: #ff3d57;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Syne', sans-serif;
+
+  /* Utilities */
+  --spacing-section: 120px;
+  --spacing-container: clamp(1.5rem, 5vw, 4rem);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-dark);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Utilities */
+@utility glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-strong {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Custom Scrollbar for DOM layer */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
