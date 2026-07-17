@@ -1,14 +1,14 @@
 import { useStore } from '../../store/useStore'
 
+import logo from '../../assets/pinelabs-logo.svg'
+
 export const Header = () => {
   const scrollProgress = useStore((state) => state.scrollProgress)
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-container py-6 flex items-center justify-between mix-blend-difference">
       <div className="flex items-center gap-3">
-        {/* Placeholder for Logo */}
-        <div className="w-8 h-8 rounded-sm bg-pine" />
-        <span className="font-display font-bold text-xl tracking-tight text-white">PineLabs</span>
+        <img src={logo} alt="Pine Labs" className="h-8 w-auto" />
       </div>
       
       <nav className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wider text-text-secondary uppercase">
